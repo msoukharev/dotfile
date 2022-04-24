@@ -1,0 +1,29 @@
+# Enable prompt substitution for zsh
+setopt PROMPT_SUBST
+
+for std_plug in $prompt_plugins; do
+    fpath=$DOTFILE_PATH/plugins/prompts/${std_plug}
+    source $fpath
+done
+
+if [ -d $DOTFILE_PATH/private/prompts/ ]; then
+    for prv_plug in $private_prompt_plugins; do
+        fpath=$DOTFILE_PATH/private/prompts/${prv_plug}
+        source $fpath
+    done
+fi
+
+function __prompt()
+{
+    ps='%F{178}┌─ %f%F{198}%n%f%F{178} 📁 %f%F{45}%2d%f%F{178}%f'
+    for std_plug in $prompt_plugins; do
+        ps=$ps'$('"${std_plug}"')'
+    done
+    for prv_plug in $private_prompt_plugins; do
+        ps=$ps'$('"${prv_plug}"')'
+    done
+    ps=$ps'\n%F{178}└─▶%f '
+    echo $ps
+}
+
+export PROMPT=$(__prompt)

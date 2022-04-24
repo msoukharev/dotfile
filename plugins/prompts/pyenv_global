@@ -1,0 +1,7 @@
+function pyenv_global()
+{
+    glob=$(pyenv global)
+    if [ -n $glob ]; then
+        echo " 🌐 %F{220}$glob%f"
+    fi
+}
