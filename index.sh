@@ -8,4 +8,4 @@ if [ -d $DOTFILE_PATH/private ]; then
         fpath=$DOTFILE_PATH/private/$file
         [ -f $fpath ] && source $fpath
     done
-done
+fi
