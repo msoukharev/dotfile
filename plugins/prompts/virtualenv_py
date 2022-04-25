@@ -5,7 +5,7 @@ function virtualenv_py()
 {
     if [ -n "$VIRTUAL_ENV" ]; then
         env=$(basename $(dirname "$VIRTUAL_ENV"))
-        ps_str=" %F{33}🐍 ${env}%f"
+        ps_str=" %F{33}🐍${env}%f"
         echo $ps_str
     fi
 }

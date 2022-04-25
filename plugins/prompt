@@ -15,7 +15,7 @@ fi
 
 function __prompt()
 {
-    ps='%F{178}┌─ %f%F{198}%n%f%F{178} 📁 %f%F{45}%2d%f%F{178}%f'
+    ps='%F{178}┌─ %f%F{198}%n%f%F{178} 📁%f%F{45}%2d%f%F{178}%f'
     for std_plug in $prompt_plugins; do
         ps=$ps'$('"${std_plug}"')'
     done

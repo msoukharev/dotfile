@@ -1,0 +1,7 @@
+function node_v()
+{
+    v=$(node --version)
+    if [ -n "$v" ]; then
+        echo " 🕸 %F{112}$v%f"
+    fi
+}
