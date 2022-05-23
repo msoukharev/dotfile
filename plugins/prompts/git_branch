@@ -4,7 +4,7 @@ function git_branch()
         # br=$(git rev-parse --abbrev-ref HEAD | cut -c 1-15)
         br=$(git rev-parse --abbrev-ref HEAD)
         if [ $(echo $br | wc -c) -ge 15 ]; then
-            br=$(echo $br | cut -c 1-14)..
+            br=$(echo $br | cut -c 1-20)..
         fi
         br_str=" %F{10}ᛆ${br}%f"
         echo "$br_str"
