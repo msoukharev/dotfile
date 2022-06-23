@@ -3,8 +3,8 @@ function git_branch()
     if git rev-parse --abbrev-ref HEAD >/dev/null 2>&1; then
         # br=$(git rev-parse --abbrev-ref HEAD | cut -c 1-15)
         br=$(git rev-parse --abbrev-ref HEAD)
-        if [ $(echo $br | wc -c) -ge 15 ]; then
-            br=$(echo $br | cut -c 1-20)..
+        if [ $(echo $br | wc -c) -ge 50 ]; then
+            br=$(echo $br | cut -c 1-48)..
         fi
         br_str=" %F{10}ᛆ${br}%f"
         echo "$br_str"
